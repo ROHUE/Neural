@@ -4,7 +4,8 @@
 #define sigmoid 0
 #define softsign 1
 #define tanh 2
-#define step 3
-#define relu 4
+#define hardLimit 3
+#define sHardLimit 4
+#define relu 5
 
 #endif //FUNCTIONTYPES

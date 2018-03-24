@@ -1,6 +1,7 @@
 #ifndef FUNCTION
 #define FUNCTION
 #include <typeinfo>
+#include <iostream>
 #include <vector>
 #include "functionTypes.h"
 
@@ -13,7 +14,8 @@ class function
 {
 public:
 	function();
-	function(int functionType);
+	function(int size);
+	function(int functionType, int size);
 	function(long double transition);
 	function(double transition);
 	function(float transition);
@@ -27,6 +29,11 @@ public:
 	int activation(int inputs[]);
 	short int activation(short inputs[]);
 	void changeType(int functionType);
+	int getType();
+	void changeTransition(long double Transition);
+	long double getTransition();
+	void setSize(int size);
+	int getSize();
     ~function();
 private:
 	bool ready = false;
@@ -34,9 +41,10 @@ private:
 	vector<long double> inputs;
 	long double output;
 	long double transition = 0.35;
-	int type = step;
+	int type = hardLimit;
 	bool ready = false;
-
+	int size;
+	void printNotReady();
 };
 
 #endif //FUNCTION
